@@ -1,0 +1,54 @@
+Download postgresql
+https://www.postgresql.org/download/
+
+Installation guides
+https://www.tutorialspoint.com/postgresql/postgresql_environment.htm
+
+Download and install Pgadmin gui
+https://www.pgadmin.org/
+
+Ubuntu 
+sudo apt-get install postgresql-9.6
+
+sudo apt-get install pgadmin
+
+sudo -u postgrespsql postgres
+
+\password somepassword
+
+Database set up
+
+open pgadmin
+select connector
+name = psotgres
+host = localhost
+passwaord = somepassword
+select ok
+
+expand server groups
+expand servers
+right click on databases
+new database
+name = creditdb
+expand creditdb 
+right click schemas
+new schema
+name = creditschema
+owner = postgres
+select ok
+
+tools 
+query tool
+paste the code below and hit the plain green start arrow.
+
+CREATE TABLE creditschema.creditClassified (
+
+id integer,
+classification integer
+
+);
+
+COPY creditschema.creditClassified FROM '*directory*/originalsimple.csv' DELIMITER ',' CSV;
+
+if successful messages should display
+Query returned successfully: 1000 rows affected, 13 msec execution time.

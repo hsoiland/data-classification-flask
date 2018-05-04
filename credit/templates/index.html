@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/static/css/style2.css" type="text/css">
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block heading %}{% endblock %}
+{% block content %}
+<form method="POST" action="/search" id="search-terms" style="text-align: left;">
+    <div class="login">               
+            <div class="app-title" style="text-align: left;">
+               <label for="query" class="login-field-icon fui-user">Search terms</label>
+                <div class="control-group">
+                <input id="query" class="login-field" name="query" type="search" 
+                    {% if terms is defined %}
+                        value="{{ terms }}"
+                    {% else %}
+                        placeholder="Input search terms here"
+                    {% endif %}
+                autofocus />
+                </div>
+            </div>         
+    </div>
+    <div><input type="submit" class="btn btn-primary btn-large btn-block" /></div>
+</form>
+{% endblock %}
